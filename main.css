@@ -1,0 +1,216 @@
+/*
+https://github.com/SDolleris33/code_louisville_project.git
+*/
+
+/*        Font Import:        */
+
+/*font-family: 'Fredericka the Great', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+/*font-family: 'Squada One', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+
+/*          Wildcard         */
+
+*{margin:0;
+padding:0;
+box-sizing:border-box;}
+
+         
+/*           Body           */
+
+body{
+    width:100vw;
+    height: 100vh;
+}
+
+body{
+display: grid;
+grid-template-columns: 100vw;
+grid-template-rows:auto auto 1fr;
+grid-template-areas:
+'header'
+ 'nav'
+ 'main';}
+
+
+
+
+/*          Header            */
+
+
+header{
+  height:30vh;
+  width: 100%;
+  grid-area: header;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background-image: url('img/bar_bg.jpg');
+  background-position:center;
+  background-size:cover;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.5);  
+}
+
+.header_con{
+  display:inline-block;
+  color: white;
+  border-radius: 6px;
+  background-color: rgba(153,0,0,0.5);
+  box-shadow: 1px 5px 5px black;
+}
+
+#header_title{
+  font-size: 8vw;
+  font-weight:300;
+  font-family: 'Fredericka the Great', cursive;
+  border-bottom: 1px solid white;
+}
+
+#header_line{
+    margin-top: 2%;
+    font-family: 'Squada One', cursive;
+    font-style:italic;
+    font-size: 6vw;
+}
+
+/*      Navigation     */
+
+
+#navbar{
+  grid-area: nav;
+  
+}
+/*
+#nav_name{
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2.7vw;
+}
+.nav_list{
+}
+
+
+.nav_li, .nav_li a {
+  display:inline-block;
+  
+  
+}
+.nav_li{
+  list-style: none;
+  text-decoration:none;
+}
+
+.nav_li a{
+  font-family: 'Squada One', cursive;
+}
+*/
+
+.nav_li a:hover{
+  color: rgba(0,0,0,.4);
+  
+}
+
+/*
+         Main        */
+
+main{border: 1px solid red;
+word-wrap:break-word;}
+
+
+
+/*      Media Queries   */
+
+
+@media only screen and (min-width: 767px){
+
+ 
+/*        Nav     */
+
+#navbar{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  width:100vw;
+  height: 8vh;
+  background-color:rgba(153,0,0,0.7);
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px rgb(0,0,0,.5);
+  margin-bottom:5px;
+}
+
+#nav_name{
+  display:inline-block;
+  margin-left: 1%;
+  width: 25%;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2.9vw;
+  color: rgb(255,255,255,.7);
+  text-align:center;
+}
+.nav_list{
+  margin-right:2vw;
+}
+
+
+.nav_li, .nav_li a {
+  display:inline-block;
+  list-style: none;
+  text-decoration:none;
+}
+.nav_li{
+
+}
+
+.nav_li a{
+  display:block;
+  margin:0 5px;
+  font-size: 2.5vw;
+  color: rgba(255,255,255,.8) ;
+  font-family: 'Squada One', cursive;
+  border-bottom: 1px solid rgba(255,255,255,.7);
+  border-radius: 5px;
+   
+}
+
+} 
+
+
+@media only screen and (min-width: 849px){
+
+
+
+header{
+  height:50%;
+  }
+  
+  
+}
+
+
+@media only screen and (min-width: 1024px){
+
+
+
+header{
+  height:375px;
+  }
+  
+#header_title{
+  font-size: 60px;
+}
+
+#header_line{
+    margin-top: 2%;
+    font-family: 'Squada One', cursive;
+    font-style:italic;
+    font-size: 6vw;
+}
+
+  
+}
+
