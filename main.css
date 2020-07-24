@@ -1,6 +1,4 @@
-/*
-https://github.com/SDolleris33/code_louisville_project.git
-*/
+
 
 /*        Font Import:        */
 
@@ -43,7 +41,7 @@ grid-template-areas:
 
 
 header{
-  height:30vh;
+  min-height:42vh;
   width: 100%;
   grid-area: header;
   display:flex;
@@ -65,7 +63,7 @@ header{
 }
 
 #header_title{
-  font-size: 8vw;
+  font-size: 10vw;
   font-weight:300;
   font-family: 'Fredericka the Great', cursive;
   border-bottom: 1px solid white;
@@ -73,46 +71,117 @@ header{
 
 #header_line{
     margin-top: 2%;
+    font-size: 7vw;
     font-family: 'Squada One', cursive;
     font-style:italic;
-    font-size: 6vw;
 }
 
 /*      Navigation     */
 
 
-#navbar{
+nav{
   grid-area: nav;
-  
-}
-/*
-#nav_name{
-  font-family: 'Fredericka the Great', cursive;
-  font-size: 2.7vw;
-}
-.nav_list{
+  display:flex;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-top: 5px;
+  height: auto;
+  flex-flow:column nowrap;
+  align-items:center;
+  justify-content:space-around;
+  background-color:rgba(153,0,0,0.7);
+  box-shadow: 2px 3px 5px rgb(0,0,0,.5);
 }
 
+#nav_name{display:none;}
 
-.nav_li, .nav_li a {
-  display:inline-block;
-  
-  
-}
-.nav_li{
-  list-style: none;
+nav a{
+  display:none;
+  margin-top: 7px;
+  font-size: 5vw;
+  color: rgba(255,255,255,.8) ;
+  font-family: 'Squada One', cursive;
+  border-bottom: 1px solid rgba(255,255,255,.7);
+  border-radius: 5px;
   text-decoration:none;
 }
 
-.nav_li a{
-  font-family: 'Squada One', cursive;
-}
-*/
 
-.nav_li a:hover{
+nav a:hover{
   color: rgba(0,0,0,.4);
   
 }
+
+nav a:last-child{margin-bottom: 10px;}
+
+
+
+#burger{
+ 
+  cursor:pointer;
+  margin:7px auto;
+}
+
+
+.show-nav{
+  display:inherit;
+}
+
+/*  Recipe Guide   */
+
+
+#recipe{
+  height:300px;   
+  display:inline-block;
+
+
+}
+
+#recipe h2{
+  
+  text-align:center;}
+
+#recipe form{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  flex-wrap:nowrap;
+  border: 1px sold black;
+  background-color: grey;
+  height:90%;
+    align-items:center;
+}
+
+form div{
+ display:inline-block;}
+
+form select{
+  width: 125px;
+}
+
+form button{
+ width: 75px;
+}
+
+#recipe_out{
+  background-color: white;
+  width: 75%;
+  height: 60%;
+  
+
+/*
+  width: 400px;  mq 1024
+  height:  200px;  mq 1024
+*/
+  
+  
+  padding: 5px;
+  text-align:center;
+  border-radius: 5px;
+
+}
+
+
 
 /*
          Main        */
@@ -130,17 +199,16 @@ word-wrap:break-word;}
  
 /*        Nav     */
 
-#navbar{
-  display:flex;
+nav{
   flex-direction:row;
-  align-items:center;
   justify-content:space-between;
   width:100vw;
   height: 8vh;
-  background-color:rgba(153,0,0,0.7);
-  border-radius: 5px;
-  box-shadow: 2px 3px 5px rgb(0,0,0,.5);
   margin-bottom:5px;
+}
+  
+#burger{
+  display:none;
 }
 
 #nav_name{
@@ -152,33 +220,23 @@ word-wrap:break-word;}
   color: rgb(255,255,255,.7);
   text-align:center;
 }
-.nav_list{
-  margin-right:2vw;
-}
 
 
-.nav_li, .nav_li a {
-  display:inline-block;
-  list-style: none;
-  text-decoration:none;
-}
-.nav_li{
-
-}
-
-.nav_li a{
+  nav a{
   display:block;
   margin:0 5px;
   font-size: 2.5vw;
-  color: rgba(255,255,255,.8) ;
-  font-family: 'Squada One', cursive;
-  border-bottom: 1px solid rgba(255,255,255,.7);
-  border-radius: 5px;
-   
+ 
 }
+nav a:last-child{margin-bottom:0px;}
 
 } 
 
+
+
+
+
+/**/
 
 @media only screen and (min-width: 849px){
 
