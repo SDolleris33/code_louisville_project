@@ -10,6 +10,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 
+/*font-family: 'Yeseva One', cursive;*/
+
+@import  url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+
 
 /*          Wildcard         */
 
@@ -17,22 +21,59 @@
 padding:0;
 box-sizing:border-box;}
 
+
+.title{
+  display:inline-block;
+  font-family: 'Squada One', cursive;
+  font-size: 11vw;
+  color: rgba(255,255,255,.97);
+  text-shadow: 1px 2px 3px rgba(153,0,0);
+  text-align:center;
+  width: 100%;
+  background-color: rgba(2,2,2,.05);
+}
+ .detail{ 
+  display:inline-block;
+  font-family: 'Yeseva One', cursive;
+  font-weight:100;
+  font-style:normal;
+  font-size: 5vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align:center;
+}
+
+.sec{
+display:flex;
+justify-content:space-around;
+flex-direction:column;
+align-items:center;
+min-height: 350px;
+width:100%;
+padding:5px;
+margin-top: 5px;
+margin-bottom: 5px;
+    
+}
+
          
 /*           Body           */
 
 body{
-    width:100vw;
-    height: 100vh;
-}
-
-body{
+overflow-y:scroll;
 display: grid;
-grid-template-columns: 100vw;
-grid-template-rows:auto auto 1fr;
+grid-template-columns: auto;
+grid-template-rows: auto auto auto 450px auto auto auto 125px;
 grid-template-areas:
 'header'
  'nav'
- 'main';}
+ 'main'
+ 'recipe'
+ 'lingo' 
+ 'skill'
+  'tool'
+ 'footer'
+    ;}
 
 
 
@@ -41,7 +82,7 @@ grid-template-areas:
 
 
 header{
-  min-height:42vh;
+  min-height:200px;
   width: 100%;
   grid-area: header;
   display:flex;
@@ -65,7 +106,7 @@ header{
 #header_title{
   font-size: 10vw;
   font-weight:300;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Fredericka the Great',      cursive;
   border-bottom: 1px solid white;
 }
 
@@ -122,38 +163,68 @@ nav a:last-child{margin-bottom: 10px;}
   margin:7px auto;
 }
 
+#burger:hover{
+  transform:scale(1.5,1.5)
+}
+  
+
 
 .show-nav{
   display:inherit;
 }
 
+/*           Main              */
+
+ main{
+  grid-area: main;
+}
+ 
+  
+ main ul{
+  font-size: 5vw;
+  margin:3% auto;
+  list-style-type:none;
+  font-family: sans-serif;
+  text-align:center;
+}
+
+
+
 /*  Recipe Guide   */
 
 
 #recipe{
-  height:300px;   
-  display:inline-block;
+  grid-area: recipe;
+  
+}
 
+#recipe_control{
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+align-items:center;  
+background-color: rgba(153,0,0,0.5);
+height: 10vh;
+width:300px;
 
 }
 
-#recipe h2{
-  
-  text-align:center;}
 
-#recipe form{
+#recipe_form{
   display:flex;
   flex-direction:column;
   justify-content:space-around;
   flex-wrap:nowrap;
   border: 1px sold black;
-  background-color: grey;
-  height:90%;
-    align-items:center;
+  background-color:grey;
+  align-items:center;
+  min-width: 50%;
+  min-height: 60%;
 }
 
 form div{
- display:inline-block;}
+ display:inline-block;
+ height:20vh;}
 
 form select{
   width: 125px;
@@ -163,31 +234,165 @@ form button{
  width: 75px;
 }
 
-#recipe_out{
-  background-color: white;
-  width: 75%;
-  height: 60%;
-  
 
-/*
-  width: 400px;  mq 1024
-  height:  200px;  mq 1024
-*/
-  
-  
+#recipe_out{
+  background-color: white; 
   padding: 5px;
   text-align:center;
   border-radius: 5px;
+  width:40%;
+  
 
 }
 
+/*Lingo Section*/
+
+#lingo{
+   grid-area:lingo;
+}
+  
+  
+.tab-group{
+  margin: 5px auto;
+  max-width: 40em;
+  width:100%;
+  border: 1px dashed black;
+}
+
+.tab{
+  position: relative;
+  width: 100%;
+  text-align:center;
+}
+.tab input{
+  position:absolute;
+  left:0;
+  top:0;
+  z-index: -999;}
+  
+.tab label {
+ background-color: #72d2c6;
+ color: #fff;
+ display:block;
+ font-weight:bold;
+ line-height:3;
+ padding-left:.5em;
+ margin-bottom:.5em;
+ transition: letter-spacing .55s;
+}
+
+.tab input:focus + label,
+.tab label:hover {
+  background-color:#85D8CE;
+  letter-spacing: 1px;
+}
+
+.tab-content{
+  max-height:0;
+  overflow:hidden;
+  transition: all .35s;
+  margin: 5px auto;
+}
+.tab-content p{ 
+  margin:1em o;
+}
+.tab input:checked ~ .tab-content{
+  max-height: 6.25em;
+}
+    
+/*Skill Section*/
+#skill{
+  grid-area:skill;
+}
+.card{
+  display: flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items:center;
+  width:90%; /*  adjust @ 768px*/
+  height:auto; /*  adjust @ 768px*/
+  margin-top: 5%; /*  adjust @ 768px*/
+  border: 1px solid black;
+}
+
+.card_img{
+  width:100%;}
+
+.card_title{
+  width:100%;
+  height:auto;
+  background-color:rgba(153,0,0,.65);
+  font-size: 14vw; /*  adjust @ 768px*/
+  text-align:center;
+}
+
+.card_txt{
+   background-color:rgba(153,0,0,.4);
+   font-size: 7vw; /*  adjust @ 768px*/
+   text-align:center;
+   word-wrap:break-word;
+}
+
+/*         Tool Section         */
 
 
-/*
-         Main        */
+#bar-glass{
+  width:80%;
+  
+ }
+  td{
+  font-size: 1.75rem;
+}
+table{
+  margin-top: 5px;
+  border:1px solid red;
+}
+tr{margin:5px 5px;}
 
-main{border: 1px solid red;
-word-wrap:break-word;}
+#pour-head{
+  margin-top: 5px;
+  text-align:center;
+  font-family:fantasy 5px;;
+  border:1px solid black;
+}
+
+/*    footer   */
+
+#footer{
+grid-area:footer;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:space-around;
+height:auto;
+width:100;
+background-color:rgba(153,0,0,0.7);
+border-top-left-radius:  5px;
+border-top-right-radius:  5px;
+}
+
+
+#footer_title{
+font-family: 'Fredericka the Great',      cursive;
+font-size: 6vw;
+}
+
+#footer_line{
+font-family: 'Squada One', cursive;
+font-size: 5vw;
+font-style:italic;
+}
+
+#up{
+  max-height:40px;
+  max-width:40px;}
+
+#up:hover{
+transform:scale(1.5,1.5);
+}
+ 
+  
+
 
 
 

@@ -10,7 +10,7 @@
   <link rel='stylesheet' href='main.css'>
 </head>
   <body>
-   <header>
+   <header id='header'>
       <span id='header_title' class=' header_con'> Bartender Basics</span>
       <span id='header_line' class='header_con'> Fieldguide for Mixology</span>
     </header>
@@ -18,31 +18,38 @@
       <span id='nav_name'>Bartender Basics</span>
        <i id='burger' tabindex='0' alt='toggle nav' class="fa fa-bars" onclick='ToggleNav();'></i>
         
-        <a href='#'>Bar Top</a>
-        <a href='#'>Intro</a>
-        <a href='#'>Recipe Guide</a>
-        <a href='#'>Terminology</a>
-        <a href='#'>Techniques</a>
-        <a href='#'>Supplies</a>
-        <a href='#'>Tools</a>
+<!--        <a href='#header'>Bar Top</a>-->
+        <a href='#intro'>Intro</a>
+        <a href='#recipe'>Recipe Guide</a> 
+        <a href='#lingo'>Lingo</a>
+        <a href='#skill'>Skills</a>
+        <a href='#tool'>Tools</a>
     </nav>
-    
-    
-    
-  
-    
+    <main class='sec'>
+      <p class='title'>Intro</p>
+      
+    <p class='detail'>Bartender Basics is a compact webpage that explains the fundamentals of bartending.</p>
  
-   
-  
-    <main><h2>jadshfkjahskjh ajshd fkjahsdfjlajlfj  dkfjlaksj dfljslkfj skjdj fljs ldj  asjlkdfja jf iasjfi j ;alskdfjlkas jlfjlaslfjaslk; jdf l;sdljfl ajdfkjas;ldkjlasdkjasdkjf;lakjdf aksj daj;lkajslkdfj a;lsjdflasjdflk ajslj ljas;ldkfj l;asjfl;kasjdfl a;si jlds;lkjf lksjdf l</h2></main>
+     <ul>
+    <li>Recipe Guide details 15 iconic cocktails.</li><br>
+      <li>Lingo explains the common terminology of bartending <q>to talk the talk and walk the walk</q> as a bartender. </li><br>
+     <li> Skills section elobarates on the base skills needed to mix with excellence.</li><br>
+      <li>Tools section contains a few refrences to identify cocktail glasses and a chart for pour count conversion.</li>
+</ul>
+      
+      <p class='detail'><em>Stay mixing my friends.</em></p>
+      
+
+    </main>
     
-  <section id='recipe'>
+  <section id='recipe' class='sec'>
     
-    <h2>Recipe Guide</h2>
-    <p>Explore 15 iconic Cocktail Recipes</p>
+    <p class='title'>Recipe Guide</p>
+    <p class='detail'>Explore 15 iconic Cocktail Recipes</p>
+    
     <form id='recipe_form'>
-      <div>
-    <select>
+      <div id='recipe_control'>
+    <select id='cocktails' onchange='showRecipe(getRecipe());'>
        <optgroup label='Vintage Cocktails'>
        <option value='0'>French 75</option>
        <option value='1'>Negroni</option>
@@ -66,23 +73,223 @@
       </optgroup>
      </select>
         
-    <button type='submit'>Get Recipe</button> <button type='reset'>Refresh</button>
+    <button type='submit'>Get Recipe</button> 
+    <button type='reset'>Refresh</button>
       </div>
       
       <div id='recipe_out'>
-    <p>Test test test test test</p>
-    
-    </div>
+        <p>Test test test test test</p>
+      </div>
+   
     </form>
-    
-    
-    
-    
-    
     </section>  
+   <section id='lingo' class='sec'>
+     
+     <p class='title'>
+      Lingo
+     </p>
+     <p class='detail'> Understand 10 common bar terms</p>
+     
+     <!--  Lingo Section 1-->
+
+     <div class='tab-group'>
+     <div class='tab'>
+       <input id='tab-1' type='radio' name='tabs'>
+       <label for='tab-1'>Back</label>
+       <div class='tab-content'>
+        <p> A glass of water postioned 45 degrees behind the cocktail.</p>
+        </div>
+      </div>
+      <div class='tab'>
+       <input id='tab-2' type='radio' name='tabs'>
+       <label for='tab-2'>Chill</label>
+       <div class='tab-content'>
+        <p> A simple technique of pouring ice into the cocktail glass to cool it. Then diposing the ice before the cocktail is poured.</p>
+        </div>
+      </div>
+      <div class='tab'>
+       <input id='tab-3' type='radio' name='tabs'>
+       <label for='tab-3'>Double</label>
+       <div class='tab-content'>
+        <p> Twice amount of base alcohol then the standard recipe call for.</p>
+        </div>
+      </div>
+      <div class='tab'>
+       <input id='tab-4' type='radio' name='tabs'>
+       <label for='tab-4'>Dry</label>
+       <div class='tab-content'>
+        <p> Reduce vermouth, specifically for a Martini.</p>
+        </div>
+      </div>
+       <div class='tab'>
+       <input id='tab-5' type='radio' name='tabs'>
+       <label for='tab-5'>Dirty</label>
+       <div class='tab-content'>
+        <p> Add Olive Juice to a <em>Martini</em></p>
+        </div>
+      </div>
+     </div>
+     
+<!--  Lingo Section 2     -->
+     
+     <div class='tab-group'>
+     <div class='tab'>
+       <input id='tab-6' type='radio' name='tabs'>
+       <label for='tab-6'>Frost</label>
+       <div class='tab-content'>
+        <p> A glass that has beened dipped in water then put in the freezer; usually for beer mugs.</p>
+        </div>
+      </div>
+      <div class='tab'>
+       <input id='tab-7' type='radio' name='tabs'>
+       <label for='tab-7'>Highball</label>
+       <div class='tab-content'>
+        <p> Liquor mixed with soda water or sprite; served in a <em>High Ball</em> glass</p>
+        </div>
+      </div>
+      <div class='tab'>
+       <input id='tab-8' type='radio' name='tabs'>
+       <label for='tab-8'>Mixer</label>
+       <div class='tab-content'>
+        <p>Non-Alcohol flavoured liquid that is mixed with alcohol</p>
+        </div>
+      </div>
+      <div class='tab'>
+       <input id='tab-9' type='radio' name='tabs'>
+       <label for='tab-9'>Neat</label>
+       <div class='tab-content'>
+        <p>Drink poured straight from bottle. No mixers or other alcohols combined.</p>
+        </div>
+      </div>
+       <div class='tab'>
+       <input id='tab-10' type='radio' name='tabs'>
+       <label for='tab-10'>Virgin</label>
+       <div class='tab-content'>
+        <p> A drink without any alcohol</p>
+        </div>
+      </div>
+    </div>
+</section>
+    
+<!--  Skill section     -->
+    
+<section id='skill' class='sec'>
+  <p class='title'>Skills</p>
+  <p class='detail'>A reference for the 4 base skills for bartending.</p>
+
+<div class='card'>
+  <span class='card_title'> Shaking</span>
+  <img class='card_img' src='img/shaking.png'>
+  <span class='card_txt'>This is the fundamental technique of bartending. Holding the shaker sideways about shoulder height; pulsate it back and forth for 10 seconds.
+  </span>
+</div>
+  
+<div class='card'>
+  <span class='card_title'> Stirring</span>
+  <img class='card_img' src='img/stir.jpg'>
+  <span class='card_txt'>Using a bar spoon, slowly stir the cocktail around the rim for 15 seconds.
+  </span>
+</div>
+  
+<div class='card'>
+  <span class='card_title'>Throwing</span>
+  <img class='card_img' src='img/throwing.jpg'>
+  <span class='card_txt'>A bit of coordination is needed. With two shakers, pour the cocktail from one shaker to another 3 to 5 times.
+  </span>
+</div>
+  
+<div class='card'>
+  <span class='card_title'>Blending</span>
+  <img class='card_img' src='img/blend.jpg'>
+  <span class='card_txt'>With a blender combine cocktail with ice and blend on low for about 30 seconds. Used mostly for exotic cocktails.</span>
+</div>
+  
+</section> 
+    
+<!--  Tool section     -->
+    
+<section id='tool' class='sec'>
+      <p class='title'>Tools</p>
+      <p class='detail'>A quick reference for Bar Glasses &amp; a pour conversion chart</p>
+      <img id='bar-glass' src='img/bar_glasses.gif' alt='collection of bar glasses'>
+      
+      <table>
+        <label id='pour-head'>Pour Conversions</label>
+       <tr>
+        <td span='col'>
+          Pour Count
+        </td>
+         <td>
+           Ounces<br>
+         </td>
+        </tr>
+        <tr>
+        <td>
+          .5 sec
+        </td>
+         <td>
+           1/6th Oz
+         </td>
+        </tr>
+     
+        <tr>
+        <td>
+          1 sec
+        </td>
+         <td>
+           1/3rd Oz
+         </td>
+        </tr>
+        <tr>
+        <td>
+          1.5 secs
+        </td>
+         <td>
+          .5 Oz
+         </td>
+        </tr>
+        <tr>
+        <td>
+          2 secs
+        </td>
+         <td>
+          2/3 Oz
+         </td>
+        </tr>
+        <tr>
+        <td>
+          2.5 secs
+        </td>
+         <td>
+          3/5 Ounce
+         </td>
+        </tr>
+        <tr>
+        <td>
+          3 secs
+        </td>
+         <td>
+          1 Oz
+         </td>
+        </tr>
+      </table>
+</section>
+    
+    
+    
+    
   
   
-  <footer></footer>
+  <footer id='footer'>
+    
+    <span id='footer_title'> Bartender's Guide</span>
+    <span id='footer_line'>Stay mixing my friends.</span>
+    <div><label for='email'>Join Mixology Media</label>
+    <input id='email' type:'email' placeholder='Enter Your Email'>
+    </div>
+    <a href='#header'><img id='up' src='img/keyboard-up-arrow-1780090-1518651 (1).webp' alt='back to top'>
+    </a>
+  </footer>
     <!--Custom J.S-->
     <script type='text/javascript'  src='main.js'></script>
   </body>
