@@ -19,41 +19,31 @@
 
 *{margin:0;
 padding:0;
-box-sizing:border-box;}
-
+box-sizing:border-box;
+}
 
 .title{
   display:inline-block;
   font-family: 'Squada One', cursive;
-  font-size: 11vw;
+  font-size: 30px;
   color: rgba(255,255,255,.97);
   text-shadow: 1px 2px 3px rgba(153,0,0);
   text-align:center;
+  height:40px;
   width: 100%;
-  background-color: rgba(2,2,2,.05);
+  background-color: rgba(153,0,0,0.5);
 }
- .detail{ 
+
+.detail{ 
   display:inline-block;
   font-family: 'Yeseva One', cursive;
   font-weight:100;
   font-style:normal;
-  font-size: 5vw;
+  font-size: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
   text-align:center;
-}
 
-.sec{
-display:flex;
-justify-content:space-around;
-flex-direction:column;
-align-items:center;
-min-height: 350px;
-width:100%;
-padding:5px;
-margin-top: 5px;
-margin-bottom: 5px;
-    
 }
 
          
@@ -63,7 +53,7 @@ body{
 overflow-y:scroll;
 display: grid;
 grid-template-columns: auto;
-grid-template-rows: auto auto auto 450px auto auto auto 125px;
+grid-template-rows: repeat 13(auto);
 grid-template-areas:
 'header'
  'nav'
@@ -72,14 +62,10 @@ grid-template-areas:
  'lingo' 
  'skill'
   'tool'
- 'footer'
-    ;}
-
-
-
+ 'footer';
+}
 
 /*          Header            */
-
 
 header{
   min-height:200px;
@@ -134,7 +120,8 @@ nav{
   box-shadow: 2px 3px 5px rgb(0,0,0,.5);
 }
 
-#nav_name{display:none;}
+#nav_name{display:none;
+}
 
 nav a{
   display:none;
@@ -153,12 +140,12 @@ nav a:hover{
   
 }
 
-nav a:last-child{margin-bottom: 10px;}
+nav a:last-child{margin-bottom: 10px;
+}
 
 
 
 #burger{
- 
   cursor:pointer;
   margin:7px auto;
 }
@@ -167,8 +154,6 @@ nav a:last-child{margin-bottom: 10px;}
   transform:scale(1.5,1.5)
 }
   
-
-
 .show-nav{
   display:inherit;
 }
@@ -177,6 +162,15 @@ nav a:last-child{margin-bottom: 10px;}
 
  main{
   grid-area: main;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+  align-items:center;
+  min-height: 350px;
+  width:100%;
+  padding:5px;
+  margin-top: 5px;
+  margin-bottom: 5px; 
 }
  
   
@@ -195,40 +189,47 @@ nav a:last-child{margin-bottom: 10px;}
 
 #recipe{
   grid-area: recipe;
-  
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+  align-items:center;
+  min-height: 350px;
+  width:100%;
+  padding:5px;
+  margin-top: 5px;
+  margin-bottom: 5px; 
 }
 
 #recipe_control{
 display:flex;
 flex-direction:row;
-justify-content:space-between;
+justify-content:space-around;
 align-items:center;  
 background-color: rgba(153,0,0,0.5);
 height: 10vh;
-width:300px;
-
+width:250px;
+margin-top: 10px;
+border-radius:8px;
 }
 
 
 #recipe_form{
   display:flex;
   flex-direction:column;
-  justify-content:space-around;
+  justify-content:space-between;
   flex-wrap:nowrap;
   border: 1px sold black;
   background-color:grey;
   align-items:center;
-  min-width: 50%;
-  min-height: 60%;
+  height:330px;
+  width: 300px;
+  border-radius:5px;
 }
-
-form div{
- display:inline-block;
- height:20vh;}
 
 form select{
   width: 125px;
 }
+
 
 form button{
  width: 75px;
@@ -240,23 +241,57 @@ form button{
   padding: 5px;
   text-align:center;
   border-radius: 5px;
-  width:40%;
-  
-
+  width:80%;
+  height: 250px;
+  margin-bottom:20px;
 }
 
 /*Lingo Section*/
 
 #lingo{
-   grid-area:lingo;
+  grid-area:lingo;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:row;
+  align-items:center;
+  min-height: 350px;
+  width:100%;
+  padding:5px;
+  margin-top: 5px;
+  margin-bottom: 5px; 
 }
-  
-  
-.tab-group{
+  .con_title{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  height:200px;
+  justify-content:center;
+  align-items:center;
+  align-self:flex-start;
+}
+
+.con{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+
+}
+    
+    
+.tab-group1{
   margin: 5px auto;
   max-width: 40em;
-  width:100%;
+  width:300px;
+  border: 1px solid red;
+  display:inline-block;
+}
+
+.tab-group2{
+  margin: 5px auto;
+  max-width: 40em;
+  width:300px;
   border: 1px dashed black;
+  display:inline-block;
 }
 
 .tab{
@@ -264,11 +299,13 @@ form button{
   width: 100%;
   text-align:center;
 }
+
 .tab input{
   position:absolute;
   left:0;
   top:0;
-  z-index: -999;}
+  z-index: -999;
+}
   
 .tab label {
  background-color: #72d2c6;
@@ -293,30 +330,44 @@ form button{
   transition: all .35s;
   margin: 5px auto;
 }
+
 .tab-content p{ 
-  margin:1em o;
+  margin:1em 0;
 }
+
 .tab input:checked ~ .tab-content{
   max-height: 6.25em;
 }
     
 /*Skill Section*/
+
 #skill{
   grid-area:skill;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+  align-items:center;
+  min-height: 350px;
+  width:100%;
+  padding:5px;
+  margin-top: 5px;
+  margin-bottom: 5px; 
 }
+
 .card{
   display: flex;
   flex-direction:column;
   justify-content:space-around;
   align-items:center;
-  width:90%; /*  adjust @ 768px*/
+  width:90%; 
   height:auto; /*  adjust @ 768px*/
   margin-top: 5%; /*  adjust @ 768px*/
   border: 1px solid black;
 }
 
 .card_img{
-  width:100%;}
+  width:100%;
+}
 
 .card_title{
   width:100%;
@@ -336,24 +387,41 @@ form button{
 /*         Tool Section         */
 
 
-#bar-glass{
-  width:80%;
-  
- }
-  td{
-  font-size: 1.75rem;
+#tool{
+  grid-area:tool;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+  align-items:center;
+  min-height: 350px;
+  width:100%;
+  padding:5px;
+  margin-top: 5px;
+  margin-bottom: 5px; 
 }
+
+
+
+#bar-glass{
+  width:95%;
+  height: 225px;
+ }
+
+
 table{
   margin-top: 5px;
   border:1px solid red;
-}
-tr{margin:5px 5px;}
-
-#pour-head{
-  margin-top: 5px;
+  width: 300px;
   text-align:center;
-  font-family:fantasy 5px;;
-  border:1px solid black;
+}
+
+
+td{
+  font-size: 1.75rem;
+  border-bottom: 1px solid grey;
+}
+
+tr{margin:5px 5px;
 }
 
 /*    footer   */
@@ -365,42 +433,52 @@ flex-direction:column;
 align-items:center;
 justify-content:space-around;
 height:auto;
-width:100;
+width:100vw;
 background-color:rgba(153,0,0,0.7);
 border-top-left-radius:  5px;
 border-top-right-radius:  5px;
+border-top: .5px solid grey;
 }
 
 
 #footer_title{
-font-family: 'Fredericka the Great',      cursive;
-font-size: 6vw;
+font-family: 'Fredericka the Great', cursive;
+font-size: 25px;
 }
 
 #footer_line{
 font-family: 'Squada One', cursive;
-font-size: 5vw;
+font-size: 20px;
 font-style:italic;
 }
 
+#footer input {
+ text-align:center; 
+}
+
 #up{
-  max-height:40px;
-  max-width:40px;}
+  max-height:30px;
+  max-width:30px;
+}
 
 #up:hover{
 transform:scale(1.5,1.5);
 }
- 
-  
-
-
 
 
 /*      Media Queries   */
 
 
 @media only screen and (min-width: 767px){
+  
+#header_title{
+  font-size: 60px;
+}
 
+#header_line{
+    margin-top: 2%;
+    font-size: 35px;
+}
  
 /*        Nav     */
 
@@ -408,7 +486,7 @@ nav{
   flex-direction:row;
   justify-content:space-between;
   width:100vw;
-  height: 8vh;
+  height: 40px;
   margin-bottom:5px;
 }
   
@@ -426,54 +504,100 @@ nav{
   text-align:center;
 }
 
-
-  nav a{
+nav a{
   display:block;
   margin:0 5px;
-  font-size: 2.5vw;
- 
+  font-size: 20px;
 }
-nav a:last-child{margin-bottom:0px;}
+nav a:hover{
+  color:grey;
+}    
+  
+nav a:last-child{margin-bottom:0px;
+}
+  
+.title{
+  font-size: 40px;
+  
+}
+
+.detail{ 
+  font-size: 17px;
+}
+  
+ main ul{
+  font-size: 20px;
+  }
+  
+  #recipe_form{
+  height:300px;
+  width: 600px;
+}
+ #recipe_out{
+  background-color: white; 
+  padding: 5px;
+  text-align:center;
+  border-radius: 5px;
+  width:80%;
+  height: 220px;
+  margin-bottom:20px;
+}
+ 
+
+  
+  .card{
+  height: auto;
+  width:300px;
+  justify-content:center;
+}
+.card_title{
+  font-size: 30px; 
+ }
+
+.card_txt{
+   font-size: 22px;
+}
+  
+.card_img{
+  max-height: 160px;
+  }
+#bar-glass{
+  width:50%;
+  height: 225px;
+ }
+
 
 } 
 
 
-
-
-
 /**/
 
-@media only screen and (min-width: 849px){
-
-
-
-header{
-  height:50%;
-  }
   
-  
-}
 
 
 @media only screen and (min-width: 1024px){
 
-
-
-header{
-  height:375px;
-  }
   
 #header_title{
-  font-size: 60px;
+  font-size: 90px;
 }
 
 #header_line{
     margin-top: 2%;
-    font-family: 'Squada One', cursive;
-    font-style:italic;
-    font-size: 6vw;
+    font-size: 60px;
 }
 
+nav{
+  height: 50px;
+}
+
+nav a{
+  font-size: 35px;
+  margin: 0;
+  }
+  
+  nav a:last-child{margin-right:15px;
+}
   
 }
 
