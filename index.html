@@ -68,11 +68,11 @@
            <option value='9'>Sazeraz</option>
         </optgroup>
      </select>
-        <button type='submit'>Get Recipe</button> 
+<!--        <button type='submit'>Get Recipe</button> -->
    </div>
       
-      <div id='recipe_out'>
-        <p>Test test test test test</p>
+      <div id='recipe_box'>
+        <p id='recipe_out'></p>
       </div>
    
     </form>
@@ -83,12 +83,12 @@
     
     
 <section id='lingo'>
-  <div class='con_title'>
+  <div id='lingo_box'>
    <p class='title'>Lingo</p>
    <p class='detail'> Understand 10 common bar terms</p>
-  </div>
+   </div>
      <!--  Lingo Section 1-->
-<div class='con'>
+
      <div class='tab-group1'>
      <div class='tab'>
        <input id='tab-1' type='radio' name='tabs'>
@@ -125,7 +125,7 @@
         <p> Add Olive Juice to a <em>Martini</em></p>
         </div>
       </div>
-
+      </div>
      
 <!--  Lingo Section 2     -->
      
@@ -165,11 +165,7 @@
         <p> A drink without any alcohol</p>
         </div>
       </div>
-    </div>
    </div>
-  
-  
-</div>
   
 </section>
     
@@ -178,7 +174,7 @@
 <section id='skill' class='sec'>
   <p class='title'>Skills</p>
   <p class='detail'>A reference for the 4 base skills for bartending.</p>
-
+<div class='con'>
   <div class='card'>
     <span class='card_title'> Shaking</span>
     <img class='card_img' src='img/shaking.png'>
@@ -192,7 +188,8 @@
     <span class='card_txt'>Using a bar spoon, slowly stir the cocktail around the rim for 15 seconds.
     </span>
   </div>
-    
+    </div>
+  <div class='con'>
   <div class='card'>
     <span class='card_title'>Throwing</span>
     <img class='card_img' src='img/throwing.jpg'>
@@ -205,15 +202,14 @@
     <img class='card_img' src='img/blend.jpg'>
     <span class='card_txt'>With a blender combine cocktail with ice and blend on low for about 30 seconds. Used mostly for exotic cocktails.</span>
   </div>
-  
+  </div>
 </section> 
     
 <!--  Tool section     -->
     
-<section id='tool' class='sec'>
+<section id='tool'>
       <p class='title'>Tools</p>
       <p class='detail'>A quick reference for Bar Glasses &amp; a pour conversion chart</p>
-  
   <div class='con'>
       <img id='bar-glass' src='img/bar_glasses.gif' alt='collection of bar glasses'>
       
@@ -276,7 +272,8 @@
          </td>
         </tr>
       </table>
-    </div>
+   </div>
+    
 </section>
     
 <footer id='footer'>

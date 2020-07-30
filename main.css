@@ -46,6 +46,12 @@ box-sizing:border-box;
 
 }
 
+.con{
+  display:block;
+  width:auto;
+  padding:auto;
+}
+
          
 /*           Body           */
 
@@ -53,7 +59,7 @@ body{
 overflow-y:scroll;
 display: grid;
 grid-template-columns: auto;
-grid-template-rows: repeat 13(auto);
+grid-template-rows: repeat 8(auto);
 grid-template-areas:
 'header'
  'nav'
@@ -112,6 +118,7 @@ nav{
   border: 1px solid black;
   border-radius: 5px;
   padding-top: 5px;
+  width:99%;
   height: auto;
   flex-flow:column nowrap;
   align-items:center;
@@ -137,7 +144,7 @@ nav a{
 
 nav a:hover{
   color: rgba(0,0,0,.4);
-  
+  transform:scale(1.2,1.2)
 }
 
 nav a:last-child{margin-bottom: 10px;
@@ -206,8 +213,8 @@ flex-direction:row;
 justify-content:space-around;
 align-items:center;  
 background-color: rgba(153,0,0,0.5);
-height: 10vh;
-width:250px;
+height: 20px;
+width:200px;
 margin-top: 10px;
 border-radius:8px;
 }
@@ -229,30 +236,26 @@ border-radius:8px;
 form select{
   width: 125px;
 }
-
-
-form button{
- width: 75px;
+#recipe_out{
+  text-align:center;
+  width:100%;
 }
 
-
-#recipe_out{
+#recipe_box{
   background-color: white; 
-  padding: 5px;
-  text-align:center;
   border-radius: 5px;
-  width:80%;
+  width: 250px;
   height: 250px;
   margin-bottom:20px;
 }
 
-/*Lingo Section*/
+/*    Lingo Section     */
 
 #lingo{
   grid-area:lingo;
   display:flex;
   justify-content:space-around;
-  flex-direction:row;
+  flex-direction:column;
   align-items:center;
   min-height: 350px;
   width:100%;
@@ -260,38 +263,26 @@ form button{
   margin-top: 5px;
   margin-bottom: 5px; 
 }
-  .con_title{
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  height:200px;
-  justify-content:center;
-  align-items:center;
-  align-self:flex-start;
-}
-
-.con{
-  display:flex;
-  flex-direction:row;
-  justify-content:space-between;
-
-}
-    
+      
     
 .tab-group1{
+  display:block;
+  margin: 5px auto;
+  max-width: 40em;
+  width:300px;
+  border: 1px solid black;
+}
+
+.tab-group2{
+  display:block;
   margin: 5px auto;
   max-width: 40em;
   width:300px;
   border: 1px solid red;
-  display:inline-block;
 }
 
-.tab-group2{
-  margin: 5px auto;
-  max-width: 40em;
-  width:300px;
-  border: 1px dashed black;
-  display:inline-block;
+.tab:nth-child(odd){
+  background-color:transparent;
 }
 
 .tab{
@@ -299,6 +290,8 @@ form button{
   width: 100%;
   text-align:center;
 }
+
+
 
 .tab input{
   position:absolute;
@@ -357,11 +350,11 @@ form button{
 .card{
   display: flex;
   flex-direction:column;
-  justify-content:space-around;
-  align-items:center;
+ 
+  align-items:stretch.0;112
   width:90%; 
-  height:auto; /*  adjust @ 768px*/
-  margin-top: 5%; /*  adjust @ 768px*/
+  height:auto; 
+  margin-top: 5%; 
   border: 1px solid black;
 }
 
@@ -382,6 +375,7 @@ form button{
    font-size: 7vw; /*  adjust @ 768px*/
    text-align:center;
    word-wrap:break-word;
+  height:40%;
 }
 
 /*         Tool Section         */
@@ -403,7 +397,7 @@ form button{
 
 
 #bar-glass{
-  width:95%;
+  width:100%;
   height: 225px;
  }
 
@@ -414,6 +408,7 @@ table{
   width: 300px;
   text-align:center;
 }
+
 
 
 td{
@@ -469,8 +464,16 @@ transform:scale(1.5,1.5);
 /*      Media Queries   */
 
 
+@media screen and (min-width:374px){
+  
+table {
+  margin-left:11vw;
+}
+}
+
 @media only screen and (min-width: 767px){
   
+/*  Header  */
 #header_title{
   font-size: 60px;
 }
@@ -509,12 +512,16 @@ nav a{
   margin:0 5px;
   font-size: 20px;
 }
+  
 nav a:hover{
-  color:grey;
+  color:black;
+  transform:scale(1.25,1.25);
 }    
   
 nav a:last-child{margin-bottom:0px;
 }
+
+/*     Title      */
   
 .title{
   font-size: 40px;
@@ -529,23 +536,54 @@ nav a:last-child{margin-bottom:0px;
   font-size: 20px;
   }
   
-  #recipe_form{
-  height:300px;
-  width: 600px;
+/*  Recipe   */
+  #recipe_control{
+  margin-bottom:5px;
 }
+  
+  #recipe_form{
+  height:200px;
+  width: 400px;
+}
+  
  #recipe_out{
   background-color: white; 
   padding: 5px;
   text-align:center;
   border-radius: 5px;
-  width:80%;
-  height: 220px;
-  margin-bottom:20px;
+  width:100%;
+  height: 100;
 }
  
-
+/*    Lingo     */
   
-  .card{
+#lingo{
+  display:block;
+  min-height: 350px;
+  width:100%;
+  padding:5px; 
+}
+          
+.tab-group1{
+  float:left;
+  margin-left: 10%;
+}
+
+.tab-group2{
+ float:right;
+  margin-right: 10%;
+}
+
+#lingo_box .detail{
+   display:inline-block;
+    margin-left: 220px;
+  }
+  
+  
+  
+/*      Skill       */
+  
+.card{
   height: auto;
   width:300px;
   justify-content:center;
@@ -561,22 +599,52 @@ nav a:last-child{margin-bottom:0px;
 .card_img{
   max-height: 160px;
   }
+
+/*  Tool */
+  
+  
 #bar-glass{
   width:50%;
-  height: 225px;
+  height: 255px;
  }
+  
+table {
+  margin-left:0vw;
 
-
+}
+  
+  
+/*     Control Div    */
+  
+  
+.con{
+    align-self:center;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    width:85%;
+    height:auto;
+  }
 } 
 
 
-/**/
+/*       1024px       */
 
   
-
-
 @media only screen and (min-width: 1024px){
+/*   Title */
+.title{
+  font-size: 55px;
+  height:auto;
+}
 
+.detail{ 
+  font-size: 25px;
+}  
+/*   Header   */
+header{
+ height: 450px;
+  }
   
 #header_title{
   font-size: 90px;
@@ -586,7 +654,7 @@ nav a:last-child{margin-bottom:0px;
     margin-top: 2%;
     font-size: 60px;
 }
-
+/* nav   */
 nav{
   height: 50px;
 }
@@ -596,8 +664,47 @@ nav a{
   margin: 0;
   }
   
-  nav a:last-child{margin-right:15px;
+nav a:last-child{
+    margin-right:5%;
+}
+/*    lingo  */
+.tab-group1{
+  float:left;
+  margin-left: 15%;
+}
+
+.tab-group2{
+ float:right;
+  margin-right: 15%;
+}
+
+#lingo_box .detail{
+   display:inline-block;
+    margin-left: 320px;
+  }
+/*  footer*/
+#footer_title{
+font-size: 40px;
+}
+
+#footer_line{
+font-size: 30px;
 }
   
+}
+
+@media screen and (min-width: 1040px){
+.tab-group1{
+  margin-left: 20%;
+}
+
+.tab-group2{
+ margin-right: 20%;
+}
+
+#lingo_box .detail{
+    margin-left: 470px;
+  }
+
 }
 
