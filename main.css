@@ -22,6 +22,7 @@ padding:0;
 box-sizing:border-box;
 }
 
+/*Generic Title @ Detials per section*/
 .title{
   display:inline-block;
   font-family: 'Squada One', cursive;
@@ -46,6 +47,8 @@ box-sizing:border-box;
 
 }
 
+/*Control Container*/
+
 .con{
   display:block;
   width:auto;
@@ -59,11 +62,12 @@ body{
 overflow-y:scroll;
 display: grid;
 grid-template-columns: auto;
-grid-template-rows: repeat 8(auto);
+grid-template-rows: repeat 9(auto);
 grid-template-areas:
 'header'
  'nav'
  'main'
+ 'mix'
  'recipe'
  'lingo' 
  'skill'
@@ -188,6 +192,90 @@ nav a:last-child{margin-bottom: 10px;
   font-family: sans-serif;
   text-align:center;
 }
+
+/*        Carousel     */
+
+#mix{
+  grid-area: mix;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+  align-items:center;
+  min-height: 420px;
+  width:100%;
+  padding:5px;
+  margin-top: 5px;
+  margin-bottom: 15px; 
+
+}
+
+.carousel{
+  position:relative;
+  height: 280px;
+  width:300px;
+  margin: 0 auto;
+}
+
+
+.carousel_cont{
+ background-color:crimson;
+ box-shadow: 1px 5px 4px black;
+ position:relative;
+ height:100%;
+ width:100%;
+ overflow:hidden;
+}
+
+.carousel_track{
+  position:relative;
+  height:100%;
+  margin:0;
+  padding:0; 
+  list-style:none;
+  border-radius: 5px;
+  transition: transform 250ms ease-in;
+  
+}
+
+.carousel_slide{
+  position:absolute;
+  top:0;
+  bottom:0;
+  width: 100%;
+}
+
+.carousel_img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.carousel_button{
+  color: black;
+  background-color:transparent;
+  font-size: 25px;
+  font-weight:600;
+  position:absolute;
+  height:30px;
+  width:30px;
+  top:112%;
+  transform:translateY(-100%);
+  border:1px solid black;
+  cursor:pointer;
+}
+
+.carousel_button:hover{
+  color:red;
+  top:110%;
+  transform:translateY(-100%);
+}
+
+.carousel_button_right{ 
+ right:-0px;
+}
+
+
+
 
 
 
@@ -529,12 +617,29 @@ nav a:last-child{margin-bottom:0px;
 }
 
 .detail{ 
-  font-size: 17px;
+  font-size: 25px;
 }
   
  main ul{
   font-size: 20px;
   }
+ 
+/*  Carousel*/
+  
+  #mix{
+  height: 600px;
+  width:100%;
+}
+
+.carousel{
+  height: 450px;
+  width:450px;
+}
+  
+  .carousel_button{
+  top:110%;
+}
+  
   
 /*  Recipe   */
   #recipe_control{
@@ -665,9 +770,29 @@ nav a{
   }
   
 nav a:last-child{
-    margin-right:5%;
+    margin-right:2%;
 }
-/*    lingo  */
+  
+/*  Carousel  */
+  
+    #mix{
+  height: 800px;
+  width:100%;
+}
+
+.carousel{
+  height: 600px;
+  width:600px;
+}
+  
+  .carousel_button{
+  top:107%;
+  font-size:30px;
+}
+  
+  
+/*    lingo   */
+  
 .tab-group1{
   float:left;
   margin-left: 15%;
