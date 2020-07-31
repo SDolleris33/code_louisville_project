@@ -266,7 +266,7 @@ nav a:last-child{margin-bottom: 10px;
 
 .carousel_button:hover{
   color:red;
-  top:110%;
+  top:112%;
   transform:translateY(-100%);
 }
 
@@ -640,6 +640,10 @@ nav a:last-child{margin-bottom:0px;
   top:110%;
 }
   
+.carousel_button:hover{
+  top:110%;
+}
+  
   
 /*  Recipe   */
   #recipe_control{
@@ -789,6 +793,11 @@ nav a:last-child{
   top:107%;
   font-size:30px;
 }
+  
+  .carousel_button:hover{
+  top:107%;
+}
+  
   
   
 /*    lingo   */
